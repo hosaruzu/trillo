@@ -55,7 +55,11 @@ body {
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 7rem;
+  font-size: 1.4rem;
   background-color: var(--light-color);
   border-bottom: 1px solid var(--grey-light-2-color);
 }
@@ -72,4 +76,115 @@ body {
 .hotel-view {
   flex: 1;
   background-color: var(--light-color);
+}
+
+.logo {
+  height: 3.25rem;
+  margin-left: 2rem;
+}
+
+.search {
+  display: flex;
+  flex: 0 0 40%;
+  align-items: center;
+  justify-content: center;
+}
+.search__input {
+  width: 90%;
+  margin-right: -3.5rem;
+  padding: 0.7rem 2rem;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: var(--grey-light-2-color);
+  border: none;
+  border-radius: 100px;
+  transition: all 0.3s;
+}
+.search__input:focus {
+  width: 100%;
+  background-color: var(--grey-light-3-color);
+  outline: none;
+}
+.search__input::-moz-placeholder {
+  color: var(--grey-light-4-color);
+  font-weight: 100;
+}
+.search__input:-ms-input-placeholder {
+  color: var(--grey-light-4-color);
+  font-weight: 100;
+}
+.search__input::placeholder {
+  color: var(--grey-light-4-color);
+  font-weight: 100;
+}
+.search__button {
+  background-color: var(--grey-light-2-color);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.search__button:focus {
+  outline: none;
+}
+.search__button:active {
+  transform: translateY(2px);
+}
+.search__input:focus + .search__button {
+  background-color: var(--grey-light-3-color);
+}
+.search__icon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--grey-dark-3-color);
+}
+
+.user-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  align-self: stretch;
+  margin-right: 2rem;
+}
+.user-nav > * {
+  height: 100%;
+  padding: 0 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.user-nav > *:hover {
+  background-color: var(--grey-light-2-color);
+}
+.user-nav__icon-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.user-nav__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  fill: var(--grey-dark-2-color);
+}
+.user-nav__notification {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.74rem;
+  height: 1.74rem;
+  color: var(--light-color);
+  font-size: 0.8rem;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+.user-nav__user {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.user-nav__user-photo {
+  width: 3.75rem;
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */
