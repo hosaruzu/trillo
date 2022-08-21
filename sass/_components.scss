@@ -178,3 +178,93 @@
   font-size: 1.2rem;
   text-align: center;
 }
+
+.gallery {
+  display: flex;
+
+  &__photo {
+    display: block;
+    width: 100%;
+  }
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--grey-light-2-color);
+
+  &__heading {
+    padding: 1.5rem 3rem;
+    font-weight: 300;
+    font-size: 2.25rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__location {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    margin-left: auto;
+    font-size: 1.2rem;
+  }
+
+  &__location-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--primary-color);
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    justify-content: center;
+    margin-left: 3rem;
+    padding: 0 2rem;
+    color: var(--light-color);
+    background-color: var(--primary-color);
+  }
+
+  &__rating-average {
+    margin-bottom: -3px;
+    font-size: 2.25rem;
+  }
+
+  &__rating-count {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 0.2rem;
+
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--primary-color);
+  }
+}
+
+.btn-inline {
+  display: inline-block;
+  padding-bottom: 2px;
+  color: var(--primary-color);
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid currentcolor;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--grey-dark-1-color);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}

@@ -46,6 +46,35 @@ body {
   --shadow-dark: 0 2rem 6rem rgb(0 0 0 / 30%);
 }
 
+@-webkit-keyframes pulsate {
+  0% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
 .container {
   max-width: 120rem;
   min-height: 50rem;
@@ -244,4 +273,85 @@ body {
   color: var(--grey-light-4-color);
   font-size: 1.2rem;
   text-align: center;
+}
+
+.gallery {
+  display: flex;
+}
+.gallery__photo {
+  display: block;
+  width: 100%;
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--grey-light-2-color);
+}
+.overview__heading {
+  padding: 1.5rem 3rem;
+  font-weight: 300;
+  font-size: 2.25rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.overview__location {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  margin-left: auto;
+  font-size: 1.2rem;
+}
+.overview__location-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: var(--primary-color);
+}
+.overview__rating {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: center;
+  margin-left: 3rem;
+  padding: 0 2rem;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+}
+.overview__rating-average {
+  margin-bottom: -3px;
+  font-size: 2.25rem;
+}
+.overview__rating-count {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.stars {
+  display: flex;
+  gap: 0.2rem;
+}
+.stars__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: var(--primary-color);
+}
+
+.btn-inline {
+  display: inline-block;
+  padding-bottom: 2px;
+  color: var(--primary-color);
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid currentcolor;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.btn-inline:hover {
+  color: var(--grey-dark-1-color);
+}
+.btn-inline:focus {
+  outline: none;
+  -webkit-animation: pulsate 1s infinite;
+          animation: pulsate 1s infinite;
 }/*# sourceMappingURL=main.css.map */

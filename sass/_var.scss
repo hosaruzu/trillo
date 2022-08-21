@@ -21,3 +21,20 @@
   /* shadows */
   --shadow-dark: 0 2rem 6rem rgb(0 0 0 / 30%);
 }
+
+@keyframes pulsate {
+  0% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 1rem 4rem rgb(0 0 0 / 25%);
+    transform: scale(1.05);
+  }
+
+  100% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
