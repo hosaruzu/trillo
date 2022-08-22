@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -117,6 +118,7 @@ body {
   display: flex;
   gap: 4.5rem;
   padding: 4.5rem;
+  font-size: 1.4rem;
   background-color: var(--grey-light-1-color);
   border-bottom: var(--border-grey);
 }
@@ -124,14 +126,16 @@ body {
 .description {
   flex: 0 0 60%;
   padding: 3rem;
-  font-size: 1.4rem;
   background-color: var(--light-color);
   box-shadow: var(--shadow-light);
 }
 
 .reviews {
+  display: flex;
   flex: 1;
-  background-color: blueviolet;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: center;
 }
 
 .logo {
@@ -364,14 +368,22 @@ body {
   padding-bottom: 2px;
   color: var(--primary-color);
   font-size: inherit;
+  text-decoration: none;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid currentcolor;
   cursor: pointer;
   transition: color 0.3s;
 }
+.btn-inline span {
+  margin-left: 3px;
+  transition: margin-left 0.2s;
+}
 .btn-inline:hover {
   color: var(--grey-dark-1-color);
+}
+.btn-inline:hover span {
+  margin-left: 8px;
 }
 .btn-inline:focus {
   outline: none;
@@ -433,4 +445,114 @@ body {
 }
 .recommend__photo:not(:last-child) {
   margin-right: -1.2rem;
+}
+
+.review {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  overflow: hidden;
+  background-color: var(--light-color);
+  background-image: url("");
+  box-shadow: var(--shadow-light);
+}
+.review::before {
+  position: absolute;
+  top: -2.75rem;
+  left: -1rem;
+  z-index: 0;
+  color: var(--grey-light-2-color);
+  font-size: 20rem;
+  font-family: sans-serif;
+  line-height: 1;
+  content: "“";
+}
+.review__text {
+  z-index: 1;
+}
+.review__user {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.review__photo {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+.review__user-box {
+  display: flex;
+  flex-direction: column;
+}
+.review__user-name {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.review__user-date {
+  color: var(--grey-dark-3-color);
+  font-size: 1rem;
+}
+.review__rating {
+  margin-left: auto;
+  color: var(--primary-color);
+  font-weight: 300;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+}
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+.cta__book {
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  color: var(--light-color);
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, var(--primary-light-color), var(--primary-dark-color));
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.btn__visible {
+  display: inline-block;
+  padding: 2rem 7.5rem;
+  transition: transform 0.2s;
+}
+.btn__hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s, background-image 0.3s;
+}
+.btn:hover {
+  background-image: linear-gradient(to left, var(--primary-light-color), var(--primary-dark-color));
+}
+.btn:hover .btn__visible {
+  transform: translateY(100%);
+}
+.btn:hover .btn__hidden {
+  transform: translateY(0);
+}
+.btn:focus {
+  outline: none;
+  -webkit-animation: pulsate 1s infinite;
+          animation: pulsate 1s infinite;
 }/*# sourceMappingURL=main.css.map */

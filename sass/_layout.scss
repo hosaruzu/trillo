@@ -37,6 +37,7 @@
   display: flex;
   gap: 4.5rem;
   padding: 4.5rem;
+  font-size: 1.4rem;
   background-color: var(--grey-light-1-color);
   border-bottom: var(--border-grey);
 }
@@ -44,12 +45,14 @@
 .description {
   flex: 0 0 60%;
   padding: 3rem;
-  font-size: 1.4rem;
   background-color: var(--light-color);
   box-shadow: var(--shadow-light);
 }
 
 .reviews {
+  display: flex;
   flex: 1;
-  background-color: blueviolet;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: center;
 }
