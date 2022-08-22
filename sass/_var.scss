@@ -20,6 +20,10 @@
 
   /* shadows */
   --shadow-dark: 0 2rem 6rem rgb(0 0 0 / 30%);
+  --shadow-light: 0 2rem 5rem rgb(0 0 0 / 6%);
+
+  /* borders */
+  --border-grey: 1px solid var(--grey-light-2-color);
 }
 
 @keyframes pulsate {
