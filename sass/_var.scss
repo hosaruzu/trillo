@@ -26,6 +26,12 @@
   --border-grey: 1px solid var(--grey-light-2-color);
 }
 
+$bp-desc: 75em; /* 1200px */
+$bp-desc-min: 69em; /* 1100px */
+$bp-tablet: 57em; /* 900px */
+$bp-tablet-sm: 38em; /* 600px */
+$bp-mobile: 32em; /* 500px */
+
 @keyframes pulsate {
   0% {
     box-shadow: none;
@@ -40,5 +46,11 @@
   100% {
     box-shadow: none;
     transform: scale(1);
+  }
+}
+
+@mixin bp($point) {
+  @media (max-width: $point) {
+    @content;
   }
 }

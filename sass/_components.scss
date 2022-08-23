@@ -9,6 +9,13 @@
   align-items: center;
   justify-content: center;
 
+  @include bp($bp-mobile) {
+    flex: 0 0 100%;
+    order: 1;
+    padding: 1rem 0;
+    background-color: var(--grey-light-2-color);
+  }
+
   &__input {
     width: 90%;
     margin-right: -3.5rem;
@@ -21,10 +28,19 @@
     border-radius: 100px;
     transition: all 0.3s;
 
+    @include bp($bp-mobile) {
+      width: 95%;
+    }
+
     &:focus {
       width: 100%;
       background-color: var(--grey-light-3-color);
       outline: none;
+
+      @include bp($bp-mobile) {
+        width: 95%;
+        background-color: var(--grey-light-2-color);
+      }
     }
 
     &::placeholder {
@@ -123,9 +139,20 @@
   margin-top: 3.5rem;
   font-size: 1.4rem;
   list-style: none;
+  @include bp($bp-tablet) {
+    flex-direction: row;
+    margin: 0;
+  }
 
   &__item {
     position: relative;
+
+    @include bp($bp-tablet) {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      padding: 1rem;
+    }
 
     &::before {
       position: absolute;
@@ -162,6 +189,12 @@
       color: var(--grey-light-1-color);
       text-transform: uppercase;
       text-decoration: none;
+
+      @include bp($bp-tablet-sm) {
+        flex-direction: column;
+        gap: 0.7rem;
+        padding: 0.5rem;
+      }
     }
   }
 
@@ -169,6 +202,11 @@
     width: 1.75rem;
     height: 1.75rem;
     fill: currentcolor;
+
+    @include bp($bp-tablet-sm) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -177,6 +215,9 @@
   color: var(--grey-light-4-color);
   font-size: 1.2rem;
   text-align: center;
+  @include bp($bp-tablet) {
+    display: none;
+  }
 }
 
 .gallery {
@@ -193,12 +234,29 @@
   align-items: center;
   border-bottom: var(--border-grey);
 
+  @include bp($bp-mobile) {
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__heading {
     padding: 1.5rem 3rem;
     font-weight: 300;
     font-size: 2.25rem;
     letter-spacing: 1px;
     text-transform: uppercase;
+
+    @include bp($bp-tablet-sm) {
+      padding: 1.25rem 2rem;
+      font-size: 1.8rem;
+    }
+
+    @include bp($bp-mobile) {
+      flex: 100%;
+      text-align: center;
+    }
   }
 
   &__location {
@@ -207,6 +265,10 @@
     align-items: center;
     margin-left: auto;
     font-size: 1.2rem;
+
+    @include bp($bp-mobile) {
+      margin-left: 0;
+    }
   }
 
   &__location-icon {
@@ -224,22 +286,37 @@
     padding: 0 2rem;
     color: var(--light-color);
     background-color: var(--primary-color);
+
+    @include bp($bp-tablet-sm) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     margin-bottom: -3px;
     font-size: 2.25rem;
+
+    @include bp($bp-tablet-sm) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @include bp($bp-tablet-sm) {
+      font-size: 0.5rem;
+    }
   }
 }
 
 .stars {
   display: flex;
   gap: 0.2rem;
+  @include bp($bp-mobile) {
+    margin-right: 2rem;
+  }
 
   &__icon {
     width: 1.75rem;
@@ -297,8 +374,14 @@
 
   &__item {
     position: relative;
+    display: flex;
     flex: 0 0 49%;
+    align-items: center;
     padding-left: 1.2rem;
+
+    @include bp($bp-mobile) {
+      flex: 100%;
+    }
 
     &::before {
       position: absolute;
@@ -400,6 +483,10 @@
     font-size: 2.25rem;
     text-transform: uppercase;
   }
+
+  @include bp($bp-tablet) {
+    padding: 2rem;
+  }
 }
 
 .cta {
@@ -411,6 +498,10 @@
     font-weight: 300;
     font-size: 1.5rem;
     text-transform: uppercase;
+  }
+
+  @include bp($bp-tablet) {
+    padding: 2.5rem 0;
   }
 }
 

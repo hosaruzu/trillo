@@ -4,6 +4,12 @@
   margin: 8rem auto;
   background-color: var(--grey-light-1-color);
   box-shadow: var(--shadow-dark);
+
+  @include bp($bp-desc) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
 }
 
 .header {
@@ -14,10 +20,21 @@
   font-size: 1.4rem;
   background-color: var(--light-color);
   border-bottom: var(--border-grey);
+
+  @include bp($bp-mobile) {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-around;
+    height: auto;
+    padding-top: 1.5rem;
+  }
 }
 
 .content {
   display: flex;
+  @include bp($bp-tablet) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -40,6 +57,13 @@
   font-size: 1.4rem;
   background-color: var(--grey-light-1-color);
   border-bottom: var(--border-grey);
+  @include bp($bp-tablet) {
+    padding: 3rem;
+  }
+
+  @include bp($bp-tablet-sm) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -47,6 +71,9 @@
   padding: 3rem;
   background-color: var(--light-color);
   box-shadow: var(--shadow-light);
+  @include bp($bp-tablet) {
+    padding: 2rem;
+  }
 }
 
 .reviews {
@@ -55,4 +82,8 @@
   flex-direction: column;
   gap: 3.5rem;
   align-items: center;
+
+  @include bp($bp-tablet) {
+    gap: 3rem;
+  }
 }
